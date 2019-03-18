@@ -5,10 +5,6 @@ import Mast from './mast'
 @inject('stores') 
 @observer
 class Test extends React.Component {
-    constructor(props) {
-        super(props);
-    }
- 
     render() {
         const { test } = this.props.stores;
         return (

@@ -11,7 +11,7 @@ class TestStore {
 
     @action
     changeName = (e) => {
-        if(e.target.value != ""){
+        if(e.target.value !== ""){
             this.name = e.target.value
             e.target.value = ""
         }else{

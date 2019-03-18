@@ -1,56 +1,82 @@
-import {observable , action} from 'mobx';
- 
-class MastSotre {
-    @observable list; 
+import { observable, action } from 'mobx';
 
-    @action
-    doubleClickHandle = (id) => {
-        return this.list.map((item)=>{
-            return item.id != id ? item.aitd=false : item.aitd=true
+class MastSotre {
+    @observable navList = null; //导航列表
+    @observable conList = null; //内容列表
+
+    @action changeBG = (id) => {
+        this.navList.slice().map(item => {
+            return item.id !== id ? item.show = false : item.show = true
+        })
+
+        this.conList.slice().map(item => {
+            return item.id !== id ? item.show = false : item.show = true
         })
     }
- 
+
     constructor() {
-        this.list = [
+        this.navList = [
             {
-                name: '开元棋牌',
-                src: 'https://1-company1.oss-cn-shenzhen.aliyuncs.com/GAMEIMAGE/5/KYQP/1535121240540.png',
                 id: 0,
-                aitd : false
+                name: '法甲摩纳哥赞助专题',
+                src: 'https://www.yabovip6.com/assets/sponsor/monaco_logo.png',
+                show: true
             },
             {
-                name: '新世界棋牌',
-                src: 'https://1-company1.oss-cn-shenzhen.aliyuncs.com/GAMEIMAGE/5/null/1550032501467.png',
                 id: 1,
-                aitd : false
+                name: '克雷斯波代言专题',
+                src: 'https://www.yabovip6.com/assets/sponsor/crespo_logo.png',
+                show: false
             },
             {
-                name: '乐游棋牌',
-                src: 'https://1-company1.oss-cn-shenzhen.aliyuncs.com/GAMEIMAGE/5/null/1545570036829.png',
                 id: 2,
-                aitd : false
+                name: '德甲柏林赫塔赞助专题',
+                src: 'https://www.yabovip6.com/assets/sponsor/hertha_logo.png',
+                show: false
             },
             {
-                name: 'FG棋牌',
-                src: 'https://1-company1.oss-cn-shenzhen.aliyuncs.com/GAMEIMAGE/5/null/1545566930629.png',
                 id: 3,
-                aitd : false
+                name: '阿根廷国家队赞助专题',
+                src: 'https://www.yabovip6.com/assets/sponsor/argentina_logo.png',
+                show: false
             },
             {
-                name: 'VG棋牌',
-                src: 'https://1-company1.oss-cn-shenzhen.aliyuncs.com/GAMEIMAGE/5/null/1545392031908.png',
                 id: 4,
-                aitd : false
+                name: '美国纳斯达克赞助专题',
+                src: 'https://www.yabovip6.com/assets/sponsor/nasdaq_logo.png',
+                show: false
+            }
+        ]
+
+        this.conList = [
+            {
+                id : 0,
+                src : 'https://96825edge.man077.com//imgs/banner/219b7fdb37b234ee3bccbd57846b067893e1b2b5.png',
+                show: true
             },
             {
-                name: '夺宝棋牌',
-                src: 'https://1-company1.oss-cn-shenzhen.aliyuncs.com/GAMEIMAGE/5/null/1545570003640.png',
-                id: 5,
-                aitd : false
+                id : 1,
+                src : 'https://96825edge.man077.com//imgs/banner/7e33e110e1958d4dccc18d9a88b405f4bdd7f672.png',
+                show: false
+            },
+            {
+                id : 2,
+                src : 'https://96825edge.man077.com//imgs/banner/aeaab591d2a2e1da2675a9e0136f9f13757ad0f9.png',
+                show: false
+            },
+            {
+                id : 3,
+                src : 'https://96825edge.man077.com//imgs/banner/41eb2d3303a8e49af052b4b63f8959b5bf1699f5.png',
+                show: false
+            },
+            {
+                id : 4,
+                src : 'https://96825edge.man077.com//imgs/banner/8778867d0eb1bc9adb1defceb199c6f60cd69cbb.png',
+                show: false
             }
         ]
     }
 
 }
-const mast = new MastSotre() 
+const mast = new MastSotre()
 export default mast
