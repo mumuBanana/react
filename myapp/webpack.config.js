@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
     mode : "development",
-    entry : "./app/ceshidoto/components/App.js",
+    entry : "./app/input/main.js",
     output : {
         path : path.resolve(__dirname,"dist"),
         filename : "main.js" 
