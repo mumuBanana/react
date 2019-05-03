@@ -1,6 +1,6 @@
-//数字排序
-let acount = new Set([...arr.sort((a,b)=>{
-	return a -b;
+//字符串转数字，去重，排序
+let str = "1,2,5,6,87,12,32,1,2,3,4,3";
+	str.split(",");
+let count = new Set([...str.sort((a,b)=>{
+	return a - b;
 })])
-
-console.log(acount)
