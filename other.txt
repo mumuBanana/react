@@ -1,0 +1,6 @@
+//数字排序
+let acount = new Set([...arr.sort((a,b)=>{
+	return a -b;
+})])
+
+console.log(acount)
